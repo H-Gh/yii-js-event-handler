@@ -1,6 +1,6 @@
 {
-  "name": "hgh/yii-js-event-trigger",
-  "version": "1.0.0",
+  "name": "hgh/yii-js-event-handler",
+  "version": "1.0.1",
   "type": "library",
   "description": "Using this library, You can define custom events and trigger them on other events trigger.",
   "keywords": [
@@ -9,7 +9,7 @@
     "Yii2",
     "PHP"
   ],
-  "homepage": "https://github.com/H-Gh/yii-js-event-trigger",
+  "homepage": "https://github.com/H-Gh/yii-js-event-handler",
   "license": "MIT",
   "authors": [
     {
