@@ -1,0 +1,30 @@
+{
+  "name": "hgh/yii-js-event-trigger",
+  "version": "1.0.0",
+  "type": "library",
+  "description": "Using this library, You can define custom events and trigger them on other events trigger.",
+  "keywords": [
+    "jQuery",
+    "JavaScript",
+    "Yii2",
+    "PHP"
+  ],
+  "homepage": "https://github.com/H-Gh/yii-js-event-trigger",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hamed Ghasempour",
+      "email": "hamedghasempour@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "components/jquery": "*",
+    "yiisoft/yii2": "~2.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hgh\\YiiJsEventHandler\\": "src/"
+    }
+  }
+}
