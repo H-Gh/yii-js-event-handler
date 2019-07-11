@@ -4,6 +4,9 @@
 # Yii JavaScript event handler
 Using this Library you can add `custom events` to elements. Your `custom events` will run whenever you define.    
     
+![MIT](https://img.shields.io/packagist/l/hgh/yii-js-event-handler.svg?style=flat-square)
+![Code Size](https://img.shields.io/github/languages/code-size/H-Gh/yii-js-event-handler.svg?color=red&style=flat-square)
+
 ## Instalation
 ```composer  
 composer require hgh/yii-js-event-handler  
