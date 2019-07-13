@@ -1,49 +1,58 @@
 
   
     
-# Yii JavaScript event handler
-Using this Library you can add `custom events` to elements. Your `custom events` will run whenever you define.    
-    
-![MIT](https://img.shields.io/packagist/l/hgh/yii-js-event-handler.svg?style=flat-square)
-![Code Size](https://img.shields.io/github/languages/code-size/H-Gh/yii-js-event-handler.svg?color=red&style=flat-square)
-
-## Instalation
-```composer  
-composer require hgh/yii-js-event-handler  
+      
+# Yii JavaScript event handler  
+Using this Library you can trigger your `custom events` on some another elements trigger.      
+      
+## Instalation  
 ```
+ composer require hgh/yii-js-event-handler
+```  
+  
+## Usage  
+### Register Yii2 Asset
+```php  
+YiiJsEventHandlerAsset::register($this);  
+```  
 
-## Usage
-First include `asset` into your `view`:
-```php
-YiiJsEventHandlerAsset::register($this);
-```
-Now create `html` element.
+### Instantiate jQuery Plugin
+There are two way of instantiate this `jQuery` plugin.
+#### Use default attributes
+To use default options you have to add two predefined attribute to your `html` element. You put your custom `JS` events into `data-events-to-run`. Separate your `custom events` using `space`. Then using `data-on` specify when these `custom events` should be trigger. The values that you can put in `data-on` follows `jQuery` events. Visit [Form events](https://api.jquery.com/category/events/form-events/), [Mouse events](https://api.jquery.com/category/events/mouse-events/) and [keyboard events](https://api.jquery.com/category/events/keyboard-events/) .
 ```html
-<div data-on="click" data-events-to-run="customEvent anotherCustomEvent">
-    Click Me to Run Custom Event
-</div>
-```
-There are two `attribute` that you have to add to your element in order to run `custom events`. `data-on` and `data-events-to-run`.
-You put your custom `JS` events into `data-events-to-run`. Separate your `custom events` using `space`. Then using `data-on` specify when these `custom events` should be run. The values that you can put in `data-on` follows `jQuery` events. Visit [Form events](https://api.jquery.com/category/events/form-events/), [Mouse events](https://api.jquery.com/category/events/mouse-events/) and [keyboard events](https://api.jquery.com/category/events/keyboard-events/)
-
-
-## Sample
-##### html
-```html
-<div data-on="click" data-events-to-run="customEvent anotherCustomEvent">
-    Click Me to Run Custom Event
-</div>
+<div data-on="click" data-events-to-run="customEvent anotherCustomEvent">  
 ```
 
-##### jquery
+#### Define your custom attributes
+In other hand, You can define your custom attributes. For this you have to `instantiate` `eventHandler` plugin.
 ```javascript
 $(document).ready(function () {
-    $(document).on("customEvent", function () {
-        alert("Custom event triggered");
-    });
-
-    $(document).on("anotherCustomEvent", function () {
-        alert("Another custom event triggered");
+    $("[data-my-custom-on-attribute]").eventHandler({
+        onEventAttribute: "data-my-custom-on-attribute",
+        toRunEventsAttribute: "data-my-custom-to-run-events-attribute"
     });
 });
+```
+Now, you can use these attributes like this:
+```html
+<div data-my-custom-on-attribute="click" data-my-custom-to-run-events-attribute="customEvent anotherCustomEvent">  
+```
+  
+## Sample  
+##### html  
+```html  
+<div data-on="click" data-events-to-run="customEvent anotherCustomEvent">  
+ Click Me to Run Custom Event</div>  
+```  
+  
+##### jquery  
+```javascript  
+$(document).ready(function () {  
+  $(document).on("customEvent", function () {  
+  alert("Custom event triggered");  
+ });  
+  $(document).on("anotherCustomEvent", function () {  
+  alert("Another custom event triggered");  
+ });});  
 ```
