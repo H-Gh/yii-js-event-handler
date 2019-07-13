@@ -23,7 +23,7 @@
 
 var EventHandler = function (element, onEvent, eventToRun) {
     this.listen = function () {
-        element.on(onEvent, function () {
+        $(element).on(onEvent, function () {
             triggerEvent(this, eventToRun);
         });
     };
