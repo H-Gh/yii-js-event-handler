@@ -4,7 +4,8 @@
       
 # Yii JavaScript event handler  
 Using this Library you can trigger your `custom events` on some another elements trigger.      
-      
+![MIT License](https://img.shields.io/github/license/H-Gh/yii-js-event-handler.svg?style=flat-square)
+![Code Size](https://img.shields.io/github/languages/code-size/H-Gh/yii-js-event-handler.svg?style=flat-square)
 ## Instalation  
 ```
  composer require hgh/yii-js-event-handler
